@@ -1,0 +1,248 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+:root {
+    --black: #222222;
+    --darkest-black: #0B0B0B;
+    --gray: #A4A4A4;
+    --white: #F2F2F2;
+    --amalfi-blue: #1F3B7C;
+    --farina-blue: #272572;
+    --farina-dark-blue: #141337;
+    --light-blue: #88A9F7;
+    --pale-blue: #D6DDED;
+    --gold: #A87908;
+    --cream: #EFE1C2;
+}
+
+@font-face {
+    font-family: 'Inria Serif';
+    src: url('./assets/fonts/InriaSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inria Sans';
+    src: url('./assets/fonts/InriaSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body {
+    font-family: 'Inria Serif', 'Times New Roman', serif;
+    letter-spacing: 0.07rem;
+    color: var(--black);
+}
+
+.content-padding {
+    padding: 10rem;
+}
+
+hr {
+    border: 0.125rem solid var(--gold);
+    border-radius: 0.5rem;
+    width: 5rem;
+}
+
+header {
+    background-color: var(--cream);
+    padding: 1rem 5rem;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+nav {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--farina-blue);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+nav li {
+    -webkit-transition: ease-out 0.7s;
+    -moz-transition: ease-out 0.7s;
+    transition: ease-out 0.7s;
+}
+
+nav li:hover {
+    color: var(--gold);
+}
+
+.header-logo {
+    width: 20rem;
+}
+
+
+
+/** GENERAL - TEXT PROPERTIES **/
+
+p {
+    line-height: 200%;
+}
+
+strong.strong {
+    font-weight: 700;
+}
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+
+
+/** GENERAL - BUTTON PROPERTIES **/
+
+button {
+    font-family: 'Inria Serif', 'Times New Roman', serif;
+    border-style: none;
+
+    -webkit-transition: ease-out 0.7s;
+    -moz-transition: ease-out 0.7s;
+    transition: ease-out 0.7s;
+}
+
+.btn-lg {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1.5rem;
+}
+
+.btn-sm {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+}
+
+.btn-white {
+    background-color: var(--white);
+    color: var(--black);
+
+    box-shadow: inset 0 0 0 0 var(--gold);
+}
+
+.btn-white:hover {
+    box-shadow: inset 400px 0 0 0 var(--gold);
+}
+
+.btn-gold {
+    background-color: var(--gold);
+    color: var(--white);
+
+    box-shadow: inset 0 0 0 0 var(--cream);
+}
+
+.btn-gold:hover {
+    color: var(--farina-dark-blue);
+    box-shadow: inset 400px 0 0 0 var(--cream);
+}
+
+
+
+/** FOOTER SECTION **/
+
+footer {
+    background-color: var(--farina-dark-blue);
+    color: var(--cream);
+}
+
+footer p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 150%;
+}
+
+#footer-top {
+    display :flex;
+    justify-content: space-between;
+    padding: 5rem;
+}
+
+#footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+
+#footer-left {
+    display: flex;
+    gap: 5rem;
+}
+
+#footer-left div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#github-logo {
+    width: 2rem;
+    filter: invert(39%) sepia(60%) saturate(1697%) hue-rotate(28deg) brightness(95%) contrast(94%);
+}
+
+.logo {
+    width: 16rem;
+}
