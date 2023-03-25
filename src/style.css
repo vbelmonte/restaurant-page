@@ -55,12 +55,13 @@ table {
     --gray: #A4A4A4;
     --white: #F2F2F2;
     --amalfi-blue: #1F3B7C;
-    --farina-blue: #272572;
-    --farina-dark-blue: #141337;
+    --farina-blue: #141337;
+    --farina-dark-blue: #09081B;
     --light-blue: #88A9F7;
     --pale-blue: #D6DDED;
     --gold: #A87908;
     --cream: #EFE1C2;
+    --orange: #A04210;
 }
 
 @font-face {
@@ -80,8 +81,8 @@ table {
 
 
 body {
-    font-family: 'Inria Serif', 'Times New Roman', serif;
-    letter-spacing: 0.07rem;
+    font-family: 'Inria Sans', 'Times New Roman', serif;
+    letter-spacing: 0.05rem;
     color: var(--black);
 }
 
@@ -95,26 +96,36 @@ hr {
     width: 5rem;
 }
 
-header {
-    background-color: var(--cream);
-    padding: 1rem 5rem;
-    text-align: center;
 
+
+
+
+header {
+    background-color: var(--orange);
+    padding: 1rem 5rem;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: 'Inria Serif', 'Times New Roman', serif;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 nav {
     text-transform: uppercase;
-    font-weight: 700;
-    color: var(--farina-blue);
+    font-weight: 400;
+    color: var(--cream);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 nav li {
@@ -128,7 +139,7 @@ nav li:hover {
 }
 
 .header-logo {
-    width: 20rem;
+    width: 16rem;
 }
 
 
@@ -144,8 +155,14 @@ strong.strong {
 }
 
 a {
-    color: var(--gold);
+    color: var(--orange);
     text-decoration: none;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 0.75rem;
+    text-transform: uppercase;
 }
 
 
@@ -169,8 +186,8 @@ button {
 }
 
 .btn-sm {
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     padding: 1rem;
@@ -187,6 +204,16 @@ button {
     box-shadow: inset 400px 0 0 0 var(--gold);
 }
 
+.btn-blue {
+    background-color: var(--farina-blue);
+    color: var(--cream);
+}
+
+.btn-orange {
+    background-color: var(--orange);
+    color: var(--cream);
+}
+
 .btn-gold {
     background-color: var(--gold);
     color: var(--white);
@@ -195,7 +222,7 @@ button {
 }
 
 .btn-gold:hover {
-    color: var(--farina-dark-blue);
+    color: var(--farina-blue);
     box-shadow: inset 400px 0 0 0 var(--cream);
 }
 
@@ -204,14 +231,14 @@ button {
 /** FOOTER SECTION **/
 
 footer {
-    background-color: var(--farina-dark-blue);
+    background-color: var(--farina-blue);
     color: var(--cream);
 }
 
 footer p {
-    font-size: 1rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    line-height: 150%;
+    line-height: 200%;
 }
 
 #footer-top {
@@ -221,6 +248,7 @@ footer p {
 }
 
 #footer-bottom {
+    background-color: var(--farina-dark-blue);
     display: flex;
     flex-direction: column;
     align-items: center;
