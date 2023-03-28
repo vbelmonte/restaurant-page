@@ -16,6 +16,6 @@ import { createHeadline, createMessageFromUs, createViewMenu } from './home';
 
   document.getElementById('home').addEventListener('click', loadHomePage);
 
-  clearContents();
-  loadHomePage();
+  /* clearContents();
+  loadHomePage(); */
 }());

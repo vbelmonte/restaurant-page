@@ -106,6 +106,10 @@ hr {
     text-align: center;
 }
 
+#content {
+    margin-top: 187px;
+}
+
 
 
 /** HEADER PROPERTIES **/
@@ -114,6 +118,7 @@ header {
     position: fixed;
     width: 100%;
     box-sizing: border-box;
+    top: 0;
 
     background-color: var(--orange);
     padding: 1rem 5rem;
@@ -280,7 +285,7 @@ button {
 }
   
 #message-from-us .left {
-    background: url('./assets/img/clark-douglas-unsplash-resized.jpg') center center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)) , url('./assets/img/clark-douglas-unsplash-resized.jpg') center center/cover no-repeat;
     flex: 1;
 }
   
@@ -307,6 +312,20 @@ button {
     flex: 1;
 }
 
+
+
+/** MENU PAGE **/
+#menu-headline {
+    background: url('./assets/img/georgia-z-unsplash.jpg') center center/cover no-repeat;
+    height: 25vh;
+    padding: 5rem 10rem;
+    display: flex;
+    align-items: center;
+}
+
+#menu-headline div {
+    width: 30rem;
+}
 
 
 
