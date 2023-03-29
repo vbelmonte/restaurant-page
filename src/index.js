@@ -19,7 +19,7 @@ import { createMenuHeadline, createMenuSection } from './menu';
     clearContents();
 
     document.getElementById('content').appendChild(createMenuHeadline());
-    document.getElementById('content').appendChild(createMenuSection());
+    /* document.getElementById('content').appendChild(createMenuSection()); */
   }
 
   document.getElementById('home').addEventListener('click', loadHomePage);

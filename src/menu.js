@@ -1,5 +1,22 @@
-function createMenuItem(itemName, itemDescription, itemPrice) {
-  const menuItem = document.createElement('div');
+import defaultExport, { antipastoArray, insalataArray, dolceArray } from './menu-list';
+
+class TableInfo {
+  constructor(name, menuItemsArray) {
+    this.tableName = name;
+    this.items = menuItemsArray;
+  }
+
+  get tableName() {
+    return this.tableName;
+  }
+
+  get items() {
+    return this.items;
+  }
+}
+
+function createMenuItemDiv(itemName, itemDescription, itemPrice) {
+  const menuItemDiv = document.createElement('div');
   const nameDescDiv = document.createElement('div');
   const priceDiv = document.createElement('div');
   const nameDescP = document.createElement('p');
@@ -9,7 +26,7 @@ function createMenuItem(itemName, itemDescription, itemPrice) {
   const descTextNode = document.createTextNode(itemDescription);
   const br = document.createElement('br');
 
-  menuItem.classList.add('menu-item');
+  menuItemDiv.classList.add('menu-item');
 
   nameStrong.innerHTML = itemName;
 
@@ -22,10 +39,51 @@ function createMenuItem(itemName, itemDescription, itemPrice) {
   priceP.appendChild(priceStrong);
   priceDiv.appendChild(priceP);
 
-  menuItem.appendChild(nameDescDiv);
-  menuItem.appendChild(priceDiv);
+  menuItemDiv.appendChild(nameDescDiv);
+  menuItemDiv.appendChild(priceDiv);
 
-  return menuItem;
+  return menuItemDiv;
+}
+
+function createMenuHeaderDiv(headerName) {
+  const headerDiv = document.createElement('div');
+  const h2 = document.createElement('h2');
+
+  h2.innerHTML = headerName;
+  headerDiv.appendChild(h2);
+  headerDiv.classList.add('menu-header');
+
+  return headerDiv;
+}
+
+function populateMenuTable(table, menuItemArray) {
+  for (let i = 0; i < menuItemArray.length; i += 1) {
+    table.appendChild(menuItemArray[i]);
+  }
+
+  return table;
+}
+
+function createMenuTableDiv(idName, classArray, menuType, headerDiv, tableInfo) {
+  const table = document.createElement('div');
+
+  table.id = idName;
+
+  for (let i = 0; i < classArray.length; i += 1) {
+    table.classList.add(classArray[i]);
+  }
+
+  table.appendChild(headerDiv);
+
+  if (menuType === 'menu-table-grid') {
+    const menuContainerGrid = document.createElement('div');
+
+    menuContainerGrid.classList.add('menu-container-grid');
+  } else {
+    table.appendChild();
+  }
+
+  return table;
 }
 
 function createMenuHeadline() {
@@ -53,6 +111,12 @@ function createMenuSection() {
 
   menuSection.id = 'menu-section';
   gridContainer.id = 'grid-container';
+
+  const testMenuItem = createMenuItemDiv(antipastoArray[0].name, antipastoArray[0].description, antipastoArray[0].price);
+
+  gridContainer.appendChild(testMenuItem);
+
+  return gridContainer;
 }
 
 export { createMenuHeadline, createMenuSection };
