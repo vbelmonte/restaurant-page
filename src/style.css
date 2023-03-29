@@ -373,6 +373,10 @@ button {
     gap: 2rem;
 }
 
+#pasta-sauce h3 {
+    text-align: center;
+}
+
 .menu-container {
     padding: 2rem;
 }

@@ -25,6 +25,6 @@ import { createMenuHeadline, createMenuSection } from './menu';
   document.getElementById('home').addEventListener('click', loadHomePage);
   document.getElementById('menu').addEventListener('click', loadMenuPage);
 
-  clearContents();
-  loadHomePage();
+  /* clearContents();
+  loadHomePage(); */
 }());

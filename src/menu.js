@@ -1,4 +1,6 @@
-import defaultExport, { antipastoArray, insalataArray, dolceArray } from './menu-list';
+import defaultExport, {
+  antipastoArray, insalataArray, dolceArray, specialArray, pizzaArray, pastaArray, sauceArray,
+} from './menu-list';
 
 class TableInfo {
   constructor(name, menuItemsArray) {
@@ -56,11 +58,12 @@ function createMenuHeaderDiv(headerName) {
   return headerDiv;
 }
 
-function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemArray) {
+function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemArray, menuItemArray2) {
   const table = document.createElement('div');
 
   table.id = idName;
   const menuItems = [];
+  const menuItems2 = [];
 
   for (let i = 0; i < classArray.length; i += 1) {
     table.classList.add(classArray[i]);
@@ -77,6 +80,17 @@ function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemAr
     menuItems.push(menuItemDiv);
   }
 
+  if (menuItemArray2 !== undefined) {
+    for (let i = 0; i < menuItemArray2.length; i += 1) {
+      const menuName = menuItemArray2[i].name;
+      const menuDescription = menuItemArray2[i].description;
+      const menuPrice = menuItemArray2[i].price;
+      const menuItemDiv = createMenuItemDiv(menuName, menuDescription, menuPrice);
+
+      menuItems2.push(menuItemDiv);
+    }
+  }
+
   if (menuType === 'menu-table-grid') {
     const menuContainerGrid = document.createElement('div');
 
@@ -87,6 +101,47 @@ function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemAr
     }
 
     table.appendChild(menuContainerGrid);
+  } else if (menuType === 'pasta-and-sauce') {
+    const innerGridContainer = document.createElement('div');
+    const menuContainerColumnPasta = document.createElement('div');
+    const menuContainerColumnSauce = document.createElement('div');
+    const pastaMenuContainerGrid = document.createElement('div');
+    const sauceMenuContainerGrid = document.createElement('div');
+    const pastaDiv = document.createElement('div');
+    const sauceDiv = document.createElement('div');
+    const pastaH3 = document.createElement('h3');
+    const sauceH3 = document.createElement('h3');
+
+    innerGridContainer.classList.add('inner-grid-container');
+    menuContainerColumnPasta.classList.add('menu-container-column');
+    menuContainerColumnSauce.classList.add('menu-container-column');
+    pastaMenuContainerGrid.classList.add('menu-container-grid');
+    sauceMenuContainerGrid.classList.add('menu-container-grid');
+
+    pastaH3.innerHTML = 'Pasta';
+    sauceH3.innerHTML = 'Sauce';
+
+    pastaDiv.appendChild(pastaH3);
+    sauceDiv.appendChild(sauceH3);
+
+    menuContainerColumnPasta.appendChild(pastaDiv);
+    menuContainerColumnSauce.appendChild(sauceDiv);
+
+    for (let i = 0; i < menuItems.length; i += 1) {
+      pastaMenuContainerGrid.appendChild(menuItems[i]);
+    }
+
+    for (let i = 0; i < menuItemArray2.length; i += 1) {
+      sauceMenuContainerGrid.appendChild(menuItems2[i]);
+    }
+
+    menuContainerColumnPasta.appendChild(pastaMenuContainerGrid);
+    menuContainerColumnSauce.appendChild(sauceMenuContainerGrid);
+
+    innerGridContainer.appendChild(menuContainerColumnPasta);
+    innerGridContainer.appendChild(menuContainerColumnSauce);
+
+    table.appendChild(innerGridContainer);
   } else {
     for (let i = 0; i < menuItems.length; i += 1) {
       table.appendChild(menuItems[i]);
@@ -119,6 +174,8 @@ function createMenuSection() {
   const menuSection = document.createElement('div');
   const gridContainer = document.createElement('div');
   const classArrayColumn = ['menu-container', 'menu-container-column', 'menu-container-reg'];
+  const classSpecGridColumn = ['menu-container', 'menu-container-column', 'menu-container-spec', 'menu-table-grid'];
+  const classGridColumn = ['menu-container', 'menu-container-column', 'menu-container-reg', 'menu-table-grid'];
   const innerGridContainerLeft = document.createElement('div');
   const innerGridContainerRight = document.createElement('div');
 
@@ -135,11 +192,27 @@ function createMenuSection() {
   const insalataDiv = createMenuTableDiv('insalata', classArrayColumn, 'regular', insalataTable.tableName, insalataTable.items);
   const dolceDiv = createMenuTableDiv('dolce', classArrayColumn, 'regular', dolceTable.tableName, dolceTable.items);
 
+  const specialTable = new TableInfo('Special Of The Day', specialArray);
+  const pizzaTable = new TableInfo('Pizza', pizzaArray);
+
+  const specialDiv = createMenuTableDiv('special', classSpecGridColumn, 'menu-table-grid', specialTable.tableName, specialTable.items);
+  const pizzaDiv = createMenuTableDiv('pizza', classGridColumn, 'menu-table-grid', pizzaTable.tableName, pizzaTable.items);
+
+  const pastaTable = new TableInfo('Pasta & Sauce', pastaArray);
+  const sauceTable = new TableInfo('Pasta & Sauce', sauceArray);
+
+  const pastaSauceDiv = createMenuTableDiv('pasta-sauce', classGridColumn, 'pasta-and-sauce', pastaTable.tableName, pastaTable.items, sauceTable.items);
+
   innerGridContainerLeft.appendChild(antipastoDiv);
   innerGridContainerLeft.appendChild(insalataDiv);
   innerGridContainerLeft.appendChild(dolceDiv);
 
+  innerGridContainerRight.appendChild(specialDiv);
+  innerGridContainerRight.appendChild(pizzaDiv);
+  innerGridContainerRight.appendChild(pastaSauceDiv);
+
   gridContainer.appendChild(innerGridContainerLeft);
+  gridContainer.appendChild(innerGridContainerRight);
   menuSection.appendChild(gridContainer);
 
   return menuSection;
