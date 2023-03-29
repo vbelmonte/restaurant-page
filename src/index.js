@@ -1,5 +1,6 @@
 import './style.css';
 import { createHeadline, createMessageFromUs, createViewMenu } from './home';
+import { createMenuHeadline, createMenuSection } from './menu';
 
 (function runPage() {
   function clearContents() {
@@ -14,8 +15,16 @@ import { createHeadline, createMessageFromUs, createViewMenu } from './home';
     document.getElementById('content').appendChild(createViewMenu());
   }
 
-  document.getElementById('home').addEventListener('click', loadHomePage);
+  function loadMenuPage() {
+    clearContents();
 
-  clearContents();
-  loadHomePage();
+    document.getElementById('content').appendChild(createMenuHeadline());
+    document.getElementById('content').appendChild(createMenuSection());
+  }
+
+  document.getElementById('home').addEventListener('click', loadHomePage);
+  document.getElementById('menu').addEventListener('click', loadMenuPage);
+
+  /* clearContents();
+  loadHomePage(); */
 }());
