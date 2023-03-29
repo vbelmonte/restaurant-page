@@ -2,16 +2,16 @@ import defaultExport, { antipastoArray, insalataArray, dolceArray } from './menu
 
 class TableInfo {
   constructor(name, menuItemsArray) {
-    this.tableName = name;
-    this.items = menuItemsArray;
+    this._tableName = name;
+    this._items = menuItemsArray;
   }
 
   get tableName() {
-    return this.tableName;
+    return this._tableName;
   }
 
   get items() {
-    return this.items;
+    return this._items;
   }
 }
 
@@ -56,31 +56,41 @@ function createMenuHeaderDiv(headerName) {
   return headerDiv;
 }
 
-function populateMenuTable(table, menuItemArray) {
-  for (let i = 0; i < menuItemArray.length; i += 1) {
-    table.appendChild(menuItemArray[i]);
-  }
-
-  return table;
-}
-
-function createMenuTableDiv(idName, classArray, menuType, headerDiv, tableInfo) {
+function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemArray) {
   const table = document.createElement('div');
 
   table.id = idName;
+  const menuItems = [];
 
   for (let i = 0; i < classArray.length; i += 1) {
     table.classList.add(classArray[i]);
   }
 
-  table.appendChild(headerDiv);
+  table.appendChild(createMenuHeaderDiv(headerName));
+
+  for (let i = 0; i < menuItemArray.length; i += 1) {
+    const menuName = menuItemArray[i].name;
+    const menuDescription = menuItemArray[i].description;
+    const menuPrice = menuItemArray[i].price;
+    const menuItemDiv = createMenuItemDiv(menuName, menuDescription, menuPrice);
+
+    menuItems.push(menuItemDiv);
+  }
 
   if (menuType === 'menu-table-grid') {
     const menuContainerGrid = document.createElement('div');
 
     menuContainerGrid.classList.add('menu-container-grid');
+
+    for (let i = 0; i < menuItems.length; i += 1) {
+      menuContainerGrid.appendChild(menuItems[i]);
+    }
+
+    table.appendChild(menuContainerGrid);
   } else {
-    table.appendChild();
+    for (let i = 0; i < menuItems.length; i += 1) {
+      table.appendChild(menuItems[i]);
+    }
   }
 
   return table;
@@ -108,15 +118,31 @@ function createMenuHeadline() {
 function createMenuSection() {
   const menuSection = document.createElement('div');
   const gridContainer = document.createElement('div');
+  const classArrayColumn = ['menu-container', 'menu-container-column', 'menu-container-reg'];
+  const innerGridContainerLeft = document.createElement('div');
+  const innerGridContainerRight = document.createElement('div');
 
+  innerGridContainerLeft.classList.add('inner-grid-container');
+  innerGridContainerRight.classList.add('inner-grid-container');
   menuSection.id = 'menu-section';
   gridContainer.id = 'grid-container';
 
-  const testMenuItem = createMenuItemDiv(antipastoArray[0].name, antipastoArray[0].description, antipastoArray[0].price);
+  const antipastoTable = new TableInfo('Antipasto', antipastoArray);
+  const insalataTable = new TableInfo('Insalata', insalataArray);
+  const dolceTable = new TableInfo('Dolce', dolceArray);
 
-  gridContainer.appendChild(testMenuItem);
+  const antipastoDiv = createMenuTableDiv('antipasto', classArrayColumn, 'regular', antipastoTable.tableName, antipastoTable.items);
+  const insalataDiv = createMenuTableDiv('insalata', classArrayColumn, 'regular', insalataTable.tableName, insalataTable.items);
+  const dolceDiv = createMenuTableDiv('dolce', classArrayColumn, 'regular', dolceTable.tableName, dolceTable.items);
 
-  return gridContainer;
+  innerGridContainerLeft.appendChild(antipastoDiv);
+  innerGridContainerLeft.appendChild(insalataDiv);
+  innerGridContainerLeft.appendChild(dolceDiv);
+
+  gridContainer.appendChild(innerGridContainerLeft);
+  menuSection.appendChild(gridContainer);
+
+  return menuSection;
 }
 
 export { createMenuHeadline, createMenuSection };
