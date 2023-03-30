@@ -196,6 +196,10 @@ h2 {
     font-weight: 200;
 }
 
+h2.bold {
+    font-weight: 700;
+}
+
 h3 {
     font-family: 'Inria Sans', 'Arial', sans-serif;
     font-size: 1.5rem;
@@ -419,6 +423,34 @@ button {
     line-height: 150%;
 }
 
+
+
+
+/** ABOUT SECTION **/
+#about-headline {
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/jason-leung-unsplash.jpg') center center/cover no-repeat;
+    height: 25vh;
+    padding: 5rem 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-section {
+    background-color: var(--cream);
+    color: var(--black);
+    padding: 5rem 5rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#about-section div {
+    text-align: center;
+    max-width: 50rem;
+}
 
 
 /** FOOTER SECTION **/
