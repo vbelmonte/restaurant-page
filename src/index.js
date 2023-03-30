@@ -2,6 +2,7 @@ import './style.css';
 import { createHeadline, createMessageFromUs, createViewMenu } from './home';
 import { createMenuHeadline, createMenuSection } from './menu';
 import { createAboutHeadline, createAboutSection } from './about';
+import { createContactHeadline, createContactSection } from './contact';
 
 (function runPage() {
   function clearContents() {
@@ -30,10 +31,18 @@ import { createAboutHeadline, createAboutSection } from './about';
     document.getElementById('content').appendChild(createAboutSection());
   }
 
+  function loadContactPage() {
+    clearContents();
+
+    document.getElementById('content').appendChild(createContactHeadline());
+    document.getElementById('content').appendChild(createContactSection());
+  }
+
   document.getElementById('home').addEventListener('click', loadHomePage);
   document.getElementById('menu').addEventListener('click', loadMenuPage);
   document.getElementById('about').addEventListener('click', loadAboutPage);
+  document.getElementById('contact').addEventListener('click', loadContactPage);
 
-  /* clearContents();
-  loadHomePage(); */
+  clearContents();
+  loadHomePage();
 }());
