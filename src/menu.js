@@ -17,6 +17,21 @@ class TableInfo {
   }
 }
 
+function createMenuHeadline() {
+  const headlineDiv = document.createElement('div');
+  const menuHeaderDiv = document.createElement('div');
+  const h1 = document.createElement('h1');
+
+  headlineDiv.id = 'menu-headline';
+
+  h1.innerHTML = 'Menu';
+  menuHeaderDiv.appendChild(h1);
+
+  headlineDiv.appendChild(menuHeaderDiv);
+
+  return headlineDiv;
+}
+
 function createMenuItemDiv(itemName, itemDescription, itemPrice) {
   const menuItemDiv = document.createElement('div');
   const nameDescDiv = document.createElement('div');
@@ -151,23 +166,16 @@ function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemAr
   return table;
 }
 
-function createMenuHeadline() {
-  const headlineDiv = document.createElement('div');
-  const menuHeaderDiv = document.createElement('div');
-  const h1 = document.createElement('h1');
+function createMenuSummarySection() {
+  const summaryDiv = document.createElement('div');
   const p = document.createElement('p');
 
-  headlineDiv.id = 'menu-headline';
+  summaryDiv.id = 'menu-summary';
 
-  h1.innerHTML = 'Menu';
-  p.innerHTML = 'Our menu is simple and serves the same dishes for lunch and dinner. This ensures we can provide quality dishes.';
+  p.innerHTML = '<b>Our menu is simple and serves the same dishes for lunch and dinner. This ensures we can provide quality dishes.</b>';
+  summaryDiv.appendChild(p);
 
-  menuHeaderDiv.appendChild(h1);
-  menuHeaderDiv.appendChild(p);
-
-  headlineDiv.appendChild(menuHeaderDiv);
-
-  return headlineDiv;
+  return summaryDiv;
 }
 
 function createMenuSection() {
@@ -178,6 +186,7 @@ function createMenuSection() {
   const classGridColumn = ['menu-container', 'menu-container-column', 'menu-container-reg', 'menu-table-grid'];
   const innerGridContainerLeft = document.createElement('div');
   const innerGridContainerRight = document.createElement('div');
+  const menuSummaryDiv = createMenuSummarySection();
 
   innerGridContainerLeft.classList.add('inner-grid-container');
   innerGridContainerRight.classList.add('inner-grid-container');
@@ -213,6 +222,7 @@ function createMenuSection() {
 
   gridContainer.appendChild(innerGridContainerLeft);
   gridContainer.appendChild(innerGridContainerRight);
+  menuSection.appendChild(menuSummaryDiv);
   menuSection.appendChild(gridContainer);
 
   return menuSection;

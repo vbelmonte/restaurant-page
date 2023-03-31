@@ -363,15 +363,12 @@ button {
 
 /** MENU PAGE **/
 #menu-headline {
-    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/georgia-z-unsplash.jpg') center center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/shakti-rajpurohit-unsplash.jpg') top center/cover no-repeat;
     height: 25vh;
     padding: 5rem 10rem;
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-#menu-headline div {
-    width: 30rem;
 }
 
 /** MENU SECTION **/
@@ -381,10 +378,17 @@ button {
     padding: 5rem 5rem;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 }
 
 #menu-section h2 {
+    text-align: center;
+}
+
+#menu-summary {
+    max-width: 25rem;
     text-align: center;
 }
 
