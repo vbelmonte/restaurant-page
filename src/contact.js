@@ -1,5 +1,7 @@
+import { createHeadline } from './constructors';
+
 function createContactHeadline() {
-  const contactHeadline = document.createElement('div');
+  /* const contactHeadline = document.createElement('div');
   const contactHeaderDiv = document.createElement('div');
   const h1 = document.createElement('h1');
 
@@ -8,9 +10,13 @@ function createContactHeadline() {
   h1.innerHTML = 'Contact Us';
   contactHeaderDiv.appendChild(h1);
 
-  contactHeadline.appendChild(contactHeaderDiv);
+  contactHeadline.appendChild(contactHeaderDiv); */
 
-  return contactHeadline;
+  const attribute = 'Photo by <a href="https://unsplash.com/@animavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anima Visual</a> on <a href="https://unsplash.com/photos/RAw5_TwkaBI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+
+  const contactHeadlineDiv = createHeadline('contact-headline', attribute, 'Contact Us');
+
+  return contactHeadlineDiv;
 }
 
 function createContactSection() {

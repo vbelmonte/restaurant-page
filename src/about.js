@@ -1,5 +1,7 @@
+import { createHeadline } from './constructors';
+
 function createAboutHeadline() {
-  const aboutHeadline = document.createElement('div');
+  /* const aboutHeadline = document.createElement('div');
   const aboutHeaderDiv = document.createElement('div');
   const h1 = document.createElement('h1');
 
@@ -8,9 +10,13 @@ function createAboutHeadline() {
   h1.innerHTML = 'About Us';
   aboutHeaderDiv.appendChild(h1);
 
-  aboutHeadline.appendChild(aboutHeaderDiv);
+  aboutHeadline.appendChild(aboutHeaderDiv); */
 
-  return aboutHeadline;
+  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+
+  const aboutHeadlineDiv = createHeadline('about-headline', attribute, 'About Us');
+
+  return aboutHeadlineDiv;
 }
 
 function createAboutSection() {
