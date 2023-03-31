@@ -8,6 +8,16 @@ function createAttribute(attributeInnerHTML) {
   return attributeDiv;
 }
 
+function createAttributePara(attributeInnerHTML) {
+  const pAttribute = document.createElement('p');
+
+  pAttribute.classList.add('attrHighlight');
+
+  pAttribute.innerHTML = attributeInnerHTML;
+
+  return pAttribute;
+}
+
 function createHeader(headerName) {
   const headerDiv = document.createElement('div');
   const h1Header = document.createElement('h1');
@@ -44,4 +54,4 @@ function createButton(classArray, buttonContent) {
   return button;
 }
 
-export { createButton, createHeadline };
+export { createButton, createHeadline, createAttributePara };

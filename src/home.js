@@ -1,23 +1,35 @@
-import { createButton } from './create-button';
+import { createButton, createAttributePara } from './constructors';
 
 function createHeadline() {
   const headlineDiv = document.createElement('div');
+  const pAttribute = document.createElement('p');
 
   headlineDiv.id = 'headline';
   headlineDiv.classList.add('attribute');
+
+  pAttribute.innerHTML = 'Photo by <a href="https://unsplash.com/@allthestories?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Storiès</a> on <a href="https://unsplash.com/photos/v1rUvnVMMkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+
+  headlineDiv.appendChild(pAttribute);
 
   return headlineDiv;
 }
 
 function createMessageFromUs() {
   const messageFromUsDiv = document.createElement('div');
+
   messageFromUsDiv.id = 'message-from-us';
 
   const leftDiv = document.createElement('div');
   const rightDiv = document.createElement('div');
   const contentDiv = document.createElement('div');
 
+  const attribute = 'Photo by <a href="https://unsplash.com/@clark_douglas?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Clark Douglas</a> on <a href="https://unsplash.com/photos/17ZU9BPy_Q4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const pAttribute = createAttributePara(attribute);
+
   leftDiv.classList.add('left');
+  leftDiv.classList.add('attribute');
+  leftDiv.appendChild(pAttribute);
+
   rightDiv.classList.add('right');
   contentDiv.classList.add('content');
 
@@ -50,8 +62,15 @@ function createViewMenu() {
   const rightDiv = document.createElement('div');
   const contentDiv = document.createElement('div');
 
+  const attribute = 'Photo by <a href="https://unsplash.com/@hojastudio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hoja Studio</a> on <a href="https://unsplash.com/photos/Thw3nleO3cM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const pAttribute = createAttributePara(attribute);
+
   leftDiv.classList.add('left');
+
   rightDiv.classList.add('right');
+  rightDiv.classList.add('attribute');
+  rightDiv.appendChild(pAttribute);
+
   contentDiv.classList.add('content');
 
   const h1 = document.createElement('h1');

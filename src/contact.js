@@ -1,4 +1,4 @@
-import { createHeadline } from './constructors';
+import { createHeadline, createAttributePara } from './constructors';
 
 function createContactHeadline() {
   /* const contactHeadline = document.createElement('div');
@@ -33,8 +33,15 @@ function createContactSection() {
   const pSummary = document.createElement('p');
   const bServices = document.createElement('b');
 
+  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const pAttribute = createAttributePara(attribute);
+
   contactSection.id = 'contact-section';
   leftDiv.classList.add('left');
+  leftDiv.classList.add('attribute');
+
+  leftDiv.appendChild(pAttribute);
+
   rightDiv.classList.add('right');
   contentDiv.classList.add('content');
 
