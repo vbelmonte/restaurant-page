@@ -53,14 +53,10 @@ table {
 
 :root {
     --black: #222222;
-    --darkest-black: #0B0B0B;
-    --gray: #A4A4A4;
+    --black-transparent: rgba(34,34,34,0.8);
     --white: #F2F2F2;
-    --amalfi-blue: #1F3B7C;
     --farina-blue: #141337;
     --farina-dark-blue: #09081B;
-    --light-blue: #88A9F7;
-    --pale-blue: #D6DDED;
     --gold: #A87908;
     --cream: #EFE1C2;
     --orange: #A04210;
@@ -193,6 +189,10 @@ p {
 
 p.attrHighlight {
     background-color: var(--farina-blue);
+}
+
+p.attrLowlight {
+    background-color: var(--black-transparent);
 }
 
 strong {

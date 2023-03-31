@@ -2,6 +2,8 @@ function createAttribute(attributeInnerHTML) {
   const attributeDiv = document.createElement('div');
   const pAttribute = document.createElement('p');
 
+  pAttribute.classList.add('attrLowlight');
+
   pAttribute.innerHTML = attributeInnerHTML;
   attributeDiv.appendChild(pAttribute);
 

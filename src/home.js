@@ -7,6 +7,8 @@ function createHeadline() {
   headlineDiv.id = 'headline';
   headlineDiv.classList.add('attribute');
 
+  pAttribute.classList.add('attrLowlight');
+
   pAttribute.innerHTML = 'Photo by <a href="https://unsplash.com/@allthestories?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Storiès</a> on <a href="https://unsplash.com/photos/v1rUvnVMMkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
 
   headlineDiv.appendChild(pAttribute);
