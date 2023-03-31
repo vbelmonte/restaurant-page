@@ -2,6 +2,8 @@ import defaultExport, {
   antipastoArray, insalataArray, dolceArray, specialArray, pizzaArray, pastaArray, sauceArray,
 } from './menu-list';
 
+import { createHeadline } from './constructors';
+
 class TableInfo {
   constructor(name, menuItemsArray) {
     this._tableName = name;
@@ -18,18 +20,11 @@ class TableInfo {
 }
 
 function createMenuHeadline() {
-  const headlineDiv = document.createElement('div');
-  const menuHeaderDiv = document.createElement('div');
-  const h1 = document.createElement('h1');
+  const attribute = 'Photo by <a href="https://unsplash.com/@shaktirajpurohit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shakti Rajpurohit</a> on <a href="https://unsplash.com/photos/FvOGEAL2GPE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
 
-  headlineDiv.id = 'menu-headline';
+  const menuHeadlineDiv = createHeadline('menu-headline', attribute, 'Menu');
 
-  h1.innerHTML = 'Menu';
-  menuHeaderDiv.appendChild(h1);
-
-  headlineDiv.appendChild(menuHeaderDiv);
-
-  return headlineDiv;
+  return menuHeadlineDiv;
 }
 
 function createMenuItemDiv(itemName, itemDescription, itemPrice) {

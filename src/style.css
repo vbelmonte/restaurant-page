@@ -112,6 +112,16 @@ hr {
     margin-top: 187px;
 }
 
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 25vh;
+    padding: 5rem 10rem;
+}
+
 
 
 /** HEADER PROPERTIES **/
@@ -364,11 +374,6 @@ button {
 /** MENU PAGE **/
 #menu-headline {
     background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/shakti-rajpurohit-unsplash.jpg') top center/cover no-repeat;
-    height: 25vh;
-    padding: 5rem 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /** MENU SECTION **/

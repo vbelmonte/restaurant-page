@@ -2,7 +2,9 @@ import { createButton } from './create-button';
 
 function createHeadline() {
   const headlineDiv = document.createElement('div');
+
   headlineDiv.id = 'headline';
+  headlineDiv.classList.add('attribute');
 
   return headlineDiv;
 }
