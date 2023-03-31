@@ -1,18 +1,7 @@
 import { createHeadline } from './constructors';
 
 function createAboutHeadline() {
-  /* const aboutHeadline = document.createElement('div');
-  const aboutHeaderDiv = document.createElement('div');
-  const h1 = document.createElement('h1');
-
-  aboutHeadline.id = 'about-headline';
-
-  h1.innerHTML = 'About Us';
-  aboutHeaderDiv.appendChild(h1);
-
-  aboutHeadline.appendChild(aboutHeaderDiv); */
-
-  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
 
   const aboutHeadlineDiv = createHeadline('about-headline', attribute, 'About Us');
 

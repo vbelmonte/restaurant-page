@@ -1,18 +1,7 @@
 import { createHeadline, createAttributePara } from './constructors';
 
 function createContactHeadline() {
-  /* const contactHeadline = document.createElement('div');
-  const contactHeaderDiv = document.createElement('div');
-  const h1 = document.createElement('h1');
-
-  contactHeadline.id = 'contact-headline';
-
-  h1.innerHTML = 'Contact Us';
-  contactHeaderDiv.appendChild(h1);
-
-  contactHeadline.appendChild(contactHeaderDiv); */
-
-  const attribute = 'Photo by <a href="https://unsplash.com/@animavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Anima Visual</a> on <a href="https://unsplash.com/photos/RAw5_TwkaBI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const attribute = 'Photo by <a href="https://unsplash.com/@animavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Anima Visual</a> on <a href="https://unsplash.com/photos/RAw5_TwkaBI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
 
   const contactHeadlineDiv = createHeadline('contact-headline', attribute, 'Contact Us');
 
@@ -33,7 +22,7 @@ function createContactSection() {
   const pSummary = document.createElement('p');
   const bServices = document.createElement('b');
 
-  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
   const pAttribute = createAttributePara(attribute);
 
   contactSection.id = 'contact-section';

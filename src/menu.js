@@ -20,7 +20,7 @@ class TableInfo {
 }
 
 function createMenuHeadline() {
-  const attribute = 'Photo by <a href="https://unsplash.com/@shaktirajpurohit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shakti Rajpurohit</a> on <a href="https://unsplash.com/photos/FvOGEAL2GPE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>';
+  const attribute = 'Photo by <a href="https://unsplash.com/@shaktirajpurohit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Shakti Rajpurohit</a> on <a href="https://unsplash.com/photos/FvOGEAL2GPE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
 
   const menuHeadlineDiv = createHeadline('menu-headline', attribute, 'Menu');
 
