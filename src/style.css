@@ -105,7 +105,7 @@ hr {
 }
 
 #content {
-    margin-top: 187px;
+    margin-top: 8rem;
 }
 
 .headline {
@@ -134,12 +134,14 @@ header {
     top: 0;
 
     background-color: var(--orange);
-    padding: 1rem 5rem;
+    padding: 0rem 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     font-family: 'Inria Serif', 'Times New Roman', serif;
+
+    transition: 0.4s; /* Adds a transition effect when the padding is decreased */
 }
 
 #nav {
@@ -176,7 +178,9 @@ nav a.nav-link:hover {
 }
 
 .header-logo {
-    width: 16rem;
+    height: 8rem;
+
+    transition: 0.4s;
 }
 
 
@@ -571,5 +575,5 @@ footer p {
 }
 
 .logo {
-    width: 16rem;
+    height: 8rem;
 }
