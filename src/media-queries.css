@@ -3,6 +3,10 @@
         padding: 5rem 5rem;
     }
 
+    #headline {
+        padding: 5rem;
+    }
+
     /** BUTTON PROPERTIES **/
 
     .btn-lg {
@@ -73,6 +77,49 @@
     }
 
     #footer-right {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .content {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        padding: 3rem;
+        box-sizing: border-box;
+    }
+
+    /** HOME PAGE **/
+    #headline {
+        padding: 3rem;
+    }
+
+    #message-from-us {
+        flex-direction: column-reverse;
+        height: calc(100vh - 4rem);
+    }
+
+    #view-menu {
+        flex-direction: column;
+        height: calc(100vh - 4rem);
+    }
+
+
+    /** MENU PAGE **/
+    #grid-container {
+        grid-template-columns: auto;
+    }
+
+    /** CONTACT PAGE **/
+    #contact-section {
+        flex-direction: column-reverse;
+        height: calc(100vh - 4rem);
+    }
+
+    /** FOOTER **/
+    #footer-left div:first-child {
         display: none;
     }
 }
