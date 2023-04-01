@@ -3,8 +3,6 @@
         padding: 5rem 5rem;
     }
 
-
-
     /** BUTTON PROPERTIES **/
 
     .btn-lg {
@@ -19,8 +17,62 @@
 }
 
 @media only screen and (max-width: 1024px) {
+
+    #content {
+        margin-top: 4rem;
+    }
+
+    /** HEADER PROPERTIES **/
+    header {
+        display: block;
+        padding: 0rem 1rem;
+    }
+
+    .header-logo {
+        height: 4rem;
+    }
+
+    #headline {
+        height: calc(100vh - 4rem);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+
+    #nav {
+        display: none;
+        padding: 1rem 0rem;
+    }
+
+    #nav button {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    #mobile-nav-icon {
+        width: 1.5rem;
+    }
+
     /** FOOTER PROPERTIES **/
-    footer button {
+    #footer-top {
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    #footer-bottom {
+        padding: 1rem;
+    }
+
+    #footer-right {
         display: none;
     }
 }

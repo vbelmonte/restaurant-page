@@ -109,7 +109,7 @@ hr {
 }
 
 #content {
-    margin-top: 10rem;
+    margin-top: 6rem;
 }
 
 .headline {
@@ -138,7 +138,7 @@ header {
     top: 0;
 
     background-color: var(--orange);
-    padding: 1rem 5rem;
+    padding: 0rem 5rem;
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -181,9 +181,18 @@ nav a.nav-link:hover {
 }
 
 .header-logo {
-    height: 8rem;
+    height: 6rem;
 
     transition: 0.2s;
+}
+
+#mobile-nav {
+    display: none;
+    padding: 1rem;
+}
+
+#mobile-nav-icon {
+    filter: invert(90%) sepia(22%) saturate(411%) hue-rotate(334deg) brightness(105%) contrast(87%);
 }
 
 
@@ -333,7 +342,7 @@ button {
 /** HEADER SECTION **/
 
 #headline {
-    height: calc(100vh - 10rem);
+    height: calc(100vh - 6rem);
     padding: 5rem 10rem;
     background: url('https://images.unsplash.com/photo-1591459034470-d1e05d7b05d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80') 20% 80%/cover no-repeat;
   
