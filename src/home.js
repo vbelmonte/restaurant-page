@@ -41,7 +41,7 @@ function createMessageFromUs() {
   h1.innerText = 'Buon Appetito!';
   p.innerText = 'At Italia Farina, we bring the flavors of Napoli to you. We give you a wide variety of dishes to experience the unique culinary history of Napoli, Italy.';
 
-  const buttonClasses = ['btn-sm', 'btn-outline', 'btn-cream-outline'];
+  const buttonClasses = ['btn-lg', 'btn-outline', 'btn-cream-outline'];
   const learnMoreButton = createButton(buttonClasses, 'Learn More');
 
   contentDiv.appendChild(h1);
@@ -81,7 +81,7 @@ function createViewMenu() {
   h1.innerText = 'Tastes Like Home';
   p.innerText = 'Discover our carefully crafted Napolitano dishes.';
 
-  const buttonClasses = ['btn-sm', 'btn-outline', 'btn-cream-outline'];
+  const buttonClasses = ['btn-lg', 'btn-outline', 'btn-cream-outline'];
   const exploreMenuButton = createButton(buttonClasses, 'Explore Our Menu');
 
   contentDiv.appendChild(h1);

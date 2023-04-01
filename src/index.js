@@ -1,4 +1,5 @@
 import './style.css';
+import './media-queries.css';
 import { createHeadline, createMessageFromUs, createViewMenu } from './home';
 import { createMenuHeadline, createMenuSection } from './menu';
 import { createAboutHeadline, createAboutSection } from './about';

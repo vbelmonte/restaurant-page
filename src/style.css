@@ -140,6 +140,7 @@ header {
     background-color: var(--orange);
     padding: 1rem 5rem;
     display: flex;
+    gap: 2rem;
     align-items: center;
     justify-content: space-between;
 
@@ -259,13 +260,6 @@ button {
 }
 
 .btn-lg {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 1.5rem;
-}
-
-.btn-sm {
     font-size: 1rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -549,6 +543,7 @@ footer p {
 #footer-top {
     display :flex;
     justify-content: space-between;
+    gap: 3rem;
     padding: 5rem;
 }
 
@@ -562,7 +557,7 @@ footer p {
 
 #footer-left {
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 #footer-left div {
@@ -577,5 +572,5 @@ footer p {
 }
 
 .logo {
-    height: 8rem;
+    height: 6rem;
 }
