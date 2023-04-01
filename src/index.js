@@ -10,8 +10,10 @@ import { createContactHeadline, createContactSection } from './contact';
   function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
       document.getElementsByClassName('header-logo')[0].style.height = '4rem';
+      document.getElementsByTagName('header')[0].style.padding = '0rem 5rem';
     } else {
       document.getElementsByClassName('header-logo')[0].style.height = '8rem';
+      document.getElementsByTagName('header')[0].style.padding = '1rem 5rem';
     }
   }
 
