@@ -84,6 +84,10 @@ body {
     color: var(--cream);
 }
 
+html {
+    background-color: var(--orange);
+}
+
 .content-padding {
     padding: 10rem;
 }
@@ -105,7 +109,7 @@ hr {
 }
 
 #content {
-    margin-top: 6rem;
+    margin-top: 10rem;
 }
 
 .headline {
@@ -178,7 +182,7 @@ nav a.nav-link:hover {
 .header-logo {
     height: 8rem;
 
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 
@@ -335,7 +339,7 @@ button {
 /** HEADER SECTION **/
 
 #headline {
-    height: 100vh;
+    height: calc(100vh - 10rem);
     padding: 5rem 10rem;
     background: url('https://images.unsplash.com/photo-1591459034470-d1e05d7b05d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80') 20% 80%/cover no-repeat;
   
