@@ -83,6 +83,10 @@
 
 @media only screen and (max-width: 768px) {
 
+    .headline {
+        padding: 3rem;
+    }
+
     .content {
         display: flex;
         justify-content: center;
@@ -108,7 +112,16 @@
 
 
     /** MENU PAGE **/
+    #menu-section {
+        padding: 3rem;
+        gap: 3rem;
+    }
+
     #grid-container {
+        grid-template-columns: auto;
+    }
+
+    .menu-container-grid {
         grid-template-columns: auto;
     }
 
@@ -121,5 +134,36 @@
     /** FOOTER **/
     #footer-left div:first-child {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .content {
+        padding: 1.5rem;
+    }
+
+    .headline {
+        padding: 1.5rem;
+    }
+
+    #headline {
+        padding: 1.5rem;
+    }
+
+    #menu-section {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .menu-container {
+        padding: 1.5rem;
+    }
+
+    #about-section {
+        padding: 1.5rem;
+    }
+
+    #footer-left {
+        flex-direction: column;
     }
 }
