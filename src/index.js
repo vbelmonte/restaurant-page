@@ -7,7 +7,6 @@ import { createContactHeadline, createContactSection } from './contact';
 
 (function runPage() {
   /** MINIMIZE NAVBAR ON SCROLL * */
-
   function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
       document.getElementsByClassName('header-logo')[0].style.height = '4rem';
@@ -32,6 +31,26 @@ import { createContactHeadline, createContactSection } from './contact';
     document.getElementById('nav').style.display = 'none';
   }
 
+  function setNavDisplayNone() {
+    const x = document.getElementById('nav');
+
+    x.style.display = 'none';
+  }
+
+  function addCloseMenu() {
+    const navLinks = document.getElementsByClassName('nav-link');
+    for (let i = 0; i < navLinks.length; i += 1) {
+      navLinks[i].addEventListener('click', setNavDisplayNone);
+    }
+  }
+
+  function removeCloseMenu() {
+    const navLinks = document.getElementsByClassName('nav-link');
+    for (let i = 0; i < navLinks.length; i += 1) {
+      navLinks[i].removeEventListener('click', setNavDisplayNone);
+    }
+  }
+
   window.onscroll = function () {
     if (window.innerWidth > 1024) {
       scrollFunction();
@@ -39,11 +58,13 @@ import { createContactHeadline, createContactSection } from './contact';
   };
 
   window.onresize = function () {
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth <= 1024) {
       forcePaddingHeaderSmall();
       forceHeaderLogoSmall();
       forceHideNav();
+      addCloseMenu();
     } else {
+      removeCloseMenu();
       forceShowNav();
       scrollFunction();
     }
