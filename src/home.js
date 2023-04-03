@@ -2,15 +2,19 @@ import { createButton, createAttributePara } from './constructors';
 
 function createHeadline() {
   const headlineDiv = document.createElement('div');
+  const h1 = document.createElement('h1');
   const pAttribute = document.createElement('p');
 
   headlineDiv.id = 'headline';
   headlineDiv.classList.add('attribute');
 
+  h1.innerHTML = 'Italian dishes with a Napoletano essence<br><br>';
+
   pAttribute.classList.add('attrLowlight');
 
   pAttribute.innerHTML = 'Photo by <a href="https://unsplash.com/@allthestories?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Storiès</a> on <a href="https://unsplash.com/photos/v1rUvnVMMkM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
 
+  headlineDiv.appendChild(h1);
   headlineDiv.appendChild(pAttribute);
 
   return headlineDiv;
