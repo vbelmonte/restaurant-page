@@ -1,4 +1,4 @@
-export default class MenuItem {
+class MenuItem {
   constructor(name, description, price) {
     this.instanceName = name;
     this.instanceDescription = description;
