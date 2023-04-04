@@ -1,4 +1,6 @@
 @media only screen and (max-width: 1200px) {
+
+    /** GENERAL PROPERTIES**/
     .content {
         padding: 5rem 5rem;
     }
@@ -8,7 +10,6 @@
     }
 
     /** BUTTON PROPERTIES **/
-
     .btn-lg {
         font-size: 1rem;
         font-weight: 400;
@@ -22,6 +23,7 @@
 
 @media only screen and (max-width: 1024px) {
 
+    /** GENERAL PROPERTIES**/
     #content {
         margin-top: 4rem;
     }
@@ -85,6 +87,7 @@
 
 @media only screen and (max-width: 768px) {
 
+    /** GENERAL PROPERTIES**/
     .headline {
         padding: 3rem;
     }
@@ -140,6 +143,8 @@
 }
 
 @media only screen and (max-width: 425px) {
+
+    /** GENERAL PROPERTIES**/
     .content {
         padding: 1.5rem;
     }
@@ -148,10 +153,12 @@
         padding: 1.5rem;
     }
 
+    /** HEADER PROPERTIES **/
     #headline {
         padding: 1.5rem;
     }
 
+    /** MENU PAGE PROPERTIES **/
     #menu-section {
         padding: 1.5rem;
         gap: 1.5rem;
@@ -161,10 +168,12 @@
         padding: 1.5rem;
     }
 
+    /** ABOUT PAGE **/
     #about-section {
         padding: 1.5rem;
     }
 
+    /** FOOTER PROPERTIES **/
     #footer-left {
         flex-direction: column;
     }

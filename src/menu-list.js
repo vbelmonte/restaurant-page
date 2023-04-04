@@ -1,20 +1,20 @@
-export default class MenuItem {
+class MenuItem {
   constructor(name, description, price) {
-    this._name = name;
-    this._description = description;
-    this._price = price;
+    this.instanceName = name;
+    this.instanceDescription = description;
+    this.instancePrice = price;
   }
 
   get name() {
-    return this._name;
+    return this.instanceName;
   }
 
   get description() {
-    return this._description;
+    return this.instanceDescription;
   }
 
   get price() {
-    return this._price;
+    return this.instancePrice;
   }
 }
 

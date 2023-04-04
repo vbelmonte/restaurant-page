@@ -1,4 +1,4 @@
-import defaultExport, {
+import {
   antipastoArray, insalataArray, dolceArray, specialArray, pizzaArray, pastaArray, sauceArray,
 } from './menu-list';
 
@@ -6,16 +6,16 @@ import { createHeadline } from './constructors';
 
 class TableInfo {
   constructor(name, menuItemsArray) {
-    this._tableName = name;
-    this._items = menuItemsArray;
+    this.instanceTableName = name;
+    this.instanceItems = menuItemsArray;
   }
 
   get tableName() {
-    return this._tableName;
+    return this.instanceTableName;
   }
 
   get items() {
-    return this._items;
+    return this.instanceItems;
   }
 }
 
@@ -68,10 +68,10 @@ function createMenuHeaderDiv(headerName) {
   return headerDiv;
 }
 
-function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemArray, menuItemArray2) {
+function createMenuTableDiv(id, classArray, menuType, headerName, menuItemArray, menuItemArray2) {
   const table = document.createElement('div');
 
-  table.id = idName;
+  table.id = id;
   const menuItems = [];
   const menuItems2 = [];
 
