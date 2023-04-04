@@ -45,7 +45,6 @@ import { createContactHeadline, createContactSection } from './contact';
   }
 
   function removeCloseMenu() {
-    console.log('running removeCloseMenu');
     const navLinks = document.getElementsByClassName('nav-link');
     for (let i = 0; i < navLinks.length; i += 1) {
       navLinks[i].removeEventListener('click', setNavDisplayNone);
@@ -71,13 +70,13 @@ import { createContactHeadline, createContactSection } from './contact';
     }
   }
 
-  window.onscroll = function () {
+  window.onscroll = () => {
     if (window.innerWidth > 1024) {
       scrollFunction();
     }
   };
 
-  window.onresize = function () {
+  window.onresize = () => {
     if (window.innerWidth <= 1024) {
       forcePaddingHeaderSmall();
       forceHeaderLogoSmall();
