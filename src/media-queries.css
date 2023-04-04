@@ -49,10 +49,12 @@
     #nav {
         display: none;
         padding: 1rem 0rem;
+
+        text-align: right;
     }
 
-    #nav button {
-        display: none;
+    nav {
+        padding: 1rem 0rem;
     }
 
     #mobile-nav {

@@ -45,9 +45,29 @@ import { createContactHeadline, createContactSection } from './contact';
   }
 
   function removeCloseMenu() {
+    console.log('running removeCloseMenu');
     const navLinks = document.getElementsByClassName('nav-link');
     for (let i = 0; i < navLinks.length; i += 1) {
       navLinks[i].removeEventListener('click', setNavDisplayNone);
+    }
+  }
+
+  function forceOnScroll() {
+    if (window.innerWidth > 1024) {
+      scrollFunction();
+    }
+  }
+
+  function forceOnResize() {
+    if (window.innerWidth <= 1024) {
+      forcePaddingHeaderSmall();
+      forceHeaderLogoSmall();
+      forceHideNav();
+      addCloseMenu();
+    } else {
+      removeCloseMenu();
+      forceShowNav();
+      scrollFunction();
     }
   }
 
@@ -117,6 +137,9 @@ import { createContactHeadline, createContactSection } from './contact';
   document.getElementById('about').addEventListener('click', loadAboutPage);
   document.getElementById('contact').addEventListener('click', loadContactPage);
   document.getElementById('mobile-nav-icon').addEventListener('click', openMenu);
+
+  forceOnScroll();
+  forceOnResize();
 
   clearContents();
   loadHomePage();
