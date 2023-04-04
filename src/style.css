@@ -49,16 +49,14 @@ table {
 
 
 
+/** ROOT VARIABLES **/
+
 :root {
     --black: #222222;
-    --darkest-black: #0B0B0B;
-    --gray: #A4A4A4;
+    --black-transparent: rgba(34,34,34,0.8);
     --white: #F2F2F2;
-    --amalfi-blue: #1F3B7C;
     --farina-blue: #141337;
     --farina-dark-blue: #09081B;
-    --light-blue: #88A9F7;
-    --pale-blue: #D6DDED;
     --gold: #A87908;
     --cream: #EFE1C2;
     --orange: #A04210;
@@ -86,6 +84,10 @@ body {
     color: var(--cream);
 }
 
+html {
+    background-color: var(--orange);
+}
+
 .content-padding {
     padding: 10rem;
 }
@@ -107,7 +109,22 @@ hr {
 }
 
 #content {
-    margin-top: 187px;
+    margin-top: 6rem;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 25vh;
+    padding: 5rem 10rem;
+}
+
+.attribute {
+    display: flex;
+    align-items: flex-end;
 }
 
 
@@ -121,8 +138,9 @@ header {
     top: 0;
 
     background-color: var(--orange);
-    padding: 1rem 5rem;
+    padding: 0rem 5rem;
     display: flex;
+    gap: 2rem;
     align-items: center;
     justify-content: space-between;
 
@@ -163,7 +181,18 @@ nav a.nav-link:hover {
 }
 
 .header-logo {
-    width: 16rem;
+    height: 6rem;
+
+    transition: 0.2s;
+}
+
+#mobile-nav {
+    display: none;
+    padding: 1rem;
+}
+
+#mobile-nav-icon {
+    filter: invert(90%) sepia(22%) saturate(411%) hue-rotate(334deg) brightness(105%) contrast(87%);
 }
 
 
@@ -172,6 +201,14 @@ nav a.nav-link:hover {
 
 p {
     line-height: 200%;
+}
+
+p.attrHighlight {
+    background-color: var(--farina-blue);
+}
+
+p.attrLowlight {
+    background-color: var(--black-transparent);
 }
 
 strong {
@@ -229,20 +266,9 @@ h5 {
 button {
     font-family: 'Inria Serif', 'Times New Roman', serif;
     border-style: none;
-
-    -webkit-transition: ease-out 0.7s;
-    -moz-transition: ease-out 0.7s;
-    transition: ease-out 0.7s;
 }
 
 .btn-lg {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 1.5rem;
-}
-
-.btn-sm {
     font-size: 1rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -260,6 +286,10 @@ button {
     color: var(--cream);
 
     box-shadow: inset 0 0 0 0 var(--cream);
+
+    -webkit-transition: ease-out 0.7s;
+    -moz-transition: ease-out 0.7s;
+    transition: ease-out 0.7s;
 }
 
 .btn-cream-outline:hover {
@@ -267,14 +297,28 @@ button {
     box-shadow: inset 400px 0 0 0 var(--cream);
 }
 
+.btn-blue, .btn-orange {
+    -webkit-transition: ease-out 0.2s;
+    -moz-transition: ease-out 0.2s;
+    transition: ease-out 0.2s;
+}
+
 .btn-blue {
     background-color: var(--farina-blue);
     color: var(--cream);
 }
 
+.btn-blue:hover {
+    background-color: var(--gold);
+}
+
 .btn-orange {
     background-color: var(--orange);
     color: var(--cream);
+}
+
+.btn-orange:hover {
+    background-color: var(--gold);
 }
 
 .btn-gold {
@@ -289,18 +333,26 @@ button {
     box-shadow: inset 400px 0 0 0 var(--cream);
 }
 
+.btn-blue:hover, .btn-orange:hover, .btn-cream-outline:hover {
+    cursor: pointer;
+}
+
 
 
 /** HEADER SECTION **/
 
 #headline {
-    height: 100vh;
+    height: calc(100vh - 6rem);
     padding: 5rem 10rem;
-    background: url('https://images.unsplash.com/photo-1591459034470-d1e05d7b05d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80') 20% 80%/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1591459034470-d1e05d7b05d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80') 20% 80%/cover no-repeat;
   
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+
+    text-align: center;
 }
 
 
@@ -343,15 +395,7 @@ button {
 
 /** MENU PAGE **/
 #menu-headline {
-    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/georgia-z-unsplash.jpg') center center/cover no-repeat;
-    height: 25vh;
-    padding: 5rem 10rem;
-    display: flex;
-    align-items: center;
-}
-
-#menu-headline div {
-    width: 30rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/shakti-rajpurohit-unsplash.jpg') top center/cover no-repeat;
 }
 
 /** MENU SECTION **/
@@ -361,10 +405,17 @@ button {
     padding: 5rem 5rem;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
 }
 
 #menu-section h2 {
+    text-align: center;
+}
+
+#menu-summary {
+    max-width: 25rem;
     text-align: center;
 }
 
@@ -437,11 +488,6 @@ button {
 /** ABOUT SECTION **/
 #about-headline {
     background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/jason-leung-unsplash.jpg') center center/cover no-repeat;
-    height: 25vh;
-    padding: 5rem 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #about-section {
@@ -466,11 +512,6 @@ button {
 
 #contact-headline {
     background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url('./assets/img/anima-visual-unsplash.jpg') center center/cover no-repeat;
-    height: 25vh;
-    padding: 5rem 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #contact-section {
@@ -505,6 +546,7 @@ footer p {
 #footer-top {
     display :flex;
     justify-content: space-between;
+    gap: 3rem;
     padding: 5rem;
 }
 
@@ -518,7 +560,7 @@ footer p {
 
 #footer-left {
     display: flex;
-    gap: 5rem;
+    gap: 3rem;
 }
 
 #footer-left div {
@@ -529,9 +571,9 @@ footer p {
 
 #github-logo {
     width: 2rem;
-    filter: invert(39%) sepia(60%) saturate(1697%) hue-rotate(28deg) brightness(95%) contrast(94%);
+    filter: invert(18%) sepia(98%) saturate(2515%) hue-rotate(23deg) brightness(98%) contrast(87%);
 }
 
 .logo {
-    width: 16rem;
+    height: 6rem;
 }

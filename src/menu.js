@@ -2,6 +2,8 @@ import defaultExport, {
   antipastoArray, insalataArray, dolceArray, specialArray, pizzaArray, pastaArray, sauceArray,
 } from './menu-list';
 
+import { createHeadline } from './constructors';
+
 class TableInfo {
   constructor(name, menuItemsArray) {
     this._tableName = name;
@@ -15,6 +17,14 @@ class TableInfo {
   get items() {
     return this._items;
   }
+}
+
+function createMenuHeadline() {
+  const attribute = 'Photo by <a href="https://unsplash.com/@shaktirajpurohit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Shakti Rajpurohit</a> on <a href="https://unsplash.com/photos/FvOGEAL2GPE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
+
+  const menuHeadlineDiv = createHeadline('menu-headline', attribute, 'Menu');
+
+  return menuHeadlineDiv;
 }
 
 function createMenuItemDiv(itemName, itemDescription, itemPrice) {
@@ -151,23 +161,16 @@ function createMenuTableDiv(idName, classArray, menuType, headerName, menuItemAr
   return table;
 }
 
-function createMenuHeadline() {
-  const headlineDiv = document.createElement('div');
-  const menuHeaderDiv = document.createElement('div');
-  const h1 = document.createElement('h1');
+function createMenuSummarySection() {
+  const summaryDiv = document.createElement('div');
   const p = document.createElement('p');
 
-  headlineDiv.id = 'menu-headline';
+  summaryDiv.id = 'menu-summary';
 
-  h1.innerHTML = 'Menu';
-  p.innerHTML = 'Our menu is simple and serves the same dishes for lunch and dinner. This ensures we can provide quality dishes.';
+  p.innerHTML = '<b>Our menu is simple and serves the same dishes for lunch and dinner. This ensures we can provide quality dishes.</b>';
+  summaryDiv.appendChild(p);
 
-  menuHeaderDiv.appendChild(h1);
-  menuHeaderDiv.appendChild(p);
-
-  headlineDiv.appendChild(menuHeaderDiv);
-
-  return headlineDiv;
+  return summaryDiv;
 }
 
 function createMenuSection() {
@@ -178,6 +181,7 @@ function createMenuSection() {
   const classGridColumn = ['menu-container', 'menu-container-column', 'menu-container-reg', 'menu-table-grid'];
   const innerGridContainerLeft = document.createElement('div');
   const innerGridContainerRight = document.createElement('div');
+  const menuSummaryDiv = createMenuSummarySection();
 
   innerGridContainerLeft.classList.add('inner-grid-container');
   innerGridContainerRight.classList.add('inner-grid-container');
@@ -213,6 +217,7 @@ function createMenuSection() {
 
   gridContainer.appendChild(innerGridContainerLeft);
   gridContainer.appendChild(innerGridContainerRight);
+  menuSection.appendChild(menuSummaryDiv);
   menuSection.appendChild(gridContainer);
 
   return menuSection;

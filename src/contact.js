@@ -1,16 +1,11 @@
+import { createHeadline, createAttributePara } from './constructors';
+
 function createContactHeadline() {
-  const contactHeadline = document.createElement('div');
-  const contactHeaderDiv = document.createElement('div');
-  const h1 = document.createElement('h1');
+  const attribute = 'Photo by <a href="https://unsplash.com/@animavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Anima Visual</a> on <a href="https://unsplash.com/photos/RAw5_TwkaBI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
 
-  contactHeadline.id = 'contact-headline';
+  const contactHeadlineDiv = createHeadline('contact-headline', attribute, 'Contact Us');
 
-  h1.innerHTML = 'Contact Us';
-  contactHeaderDiv.appendChild(h1);
-
-  contactHeadline.appendChild(contactHeaderDiv);
-
-  return contactHeadline;
+  return contactHeadlineDiv;
 }
 
 function createContactSection() {
@@ -27,8 +22,15 @@ function createContactSection() {
   const pSummary = document.createElement('p');
   const bServices = document.createElement('b');
 
+  const attribute = 'Photo by <a href="https://unsplash.com/@ninjason?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Jason Leung</a> on <a href="https://unsplash.com/photos/poI7DelFiVA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a>';
+  const pAttribute = createAttributePara(attribute);
+
   contactSection.id = 'contact-section';
   leftDiv.classList.add('left');
+  leftDiv.classList.add('attribute');
+
+  leftDiv.appendChild(pAttribute);
+
   rightDiv.classList.add('right');
   contentDiv.classList.add('content');
 
